@@ -25,27 +25,9 @@ public class CustomerController {
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Customer> getCustomers() throws SQLException {
+    public List<Customer> getCustomers() {
 
         return customerRepository.findAll();
-
-        // List<Customer> customers;
-        //     String query = "select * from customer";
-        //     try (Connection con = dataSource.getConnection(); PreparedStatement pst = con.prepareStatement(query);
-        //             ResultSet rs = pst.executeQuery()) {
-        //         customers = new ArrayList<>();
-        //         Customer customer;
-        //         while (rs.next()) {
-        //             customer = new Customer();
-        //             customer.setId(rs.getInt("id"));
-        //             customer.setFirstName(rs.getString("first_name"));
-        //             customer.setLastName(rs.getString("last_name"));
-        //             customer.setAddress(rs.getString("address"));
-        //             customers.add(customer);
-        //         }
-        //     }
-        //
-        // return customers;
     }
 
 }
